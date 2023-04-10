@@ -1,0 +1,27 @@
+<section style="background-color: #eee;">
+  <div class="container py-3">
+
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mb-2" *ngIf="profile">
+          <div class="card-body text-center" style="height: 400px">
+            <img src="{{profile.avatar_url}}" alt="avatar"
+                 class="rounded-circle img-fluid" style="width: 70px;">
+            <h5 class="my-3">{{profile.name}}</h5>
+            <p class="text-muted">@{{profile.login}}</p>
+            <p class="text-muted">{{profile.bio}}</p>
+            <p class="text-muted">Company: {{profile.company}}</p>
+            <p class="text-muted">Location: {{profile.location}}</p>
+            <p class="text-muted mb-4">Twitter: @{{profile.twitter_username}}</p>
+            <div class="d-flex justify-content-center mb-2">
+              <a href="{{profile.html_url}}" target="_blank" class="btn btn-outline-secondary ms-1">View profile on
+                Github</a>
+            </div>
+          </div>
+        </div>
+        <app-followers [login]="login" style="display: contents"></app-followers>
+      </div>
+      <app-repos [login]="login" style="display: contents"></app-repos>
+    </div>
+  </div>
+</section>

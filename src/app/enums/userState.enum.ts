@@ -1,4 +1,4 @@
-export enum UserStateEnum {
+export enum StateEnum {
   LOADING = "Loading",
   LOADED = "Loaded",
   ERROR = "Eroor",

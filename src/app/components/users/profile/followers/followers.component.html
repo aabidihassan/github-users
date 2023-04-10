@@ -1,0 +1,32 @@
+<div class="card mb-4 mb-lg-0">
+  <div class="card-body p-0">
+    <div class="card-header">
+      <h4 class="text-center mb-0">Followers</h4>
+    </div>
+    <div class="card-body" style="height: 300px; overflow-y: auto;">
+      <ol class="list-group list-group-numbered">
+        <ng-container *ngIf="followers$ | async as followers; else loading">
+          <div *ngIf="followers.length > 0">
+            <ng-container *ngFor="let follower of followers;">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">
+                    <img src="{{follower.avatar_url}}" width="50" class="m-1 rounded-circle">
+                    {{follower.login}}
+                  </div>
+                </div>
+                <a routerLink="/users/{{follower.login}}" target="_blank" class="btn btn-outline-secondary btn-sm ms-auto">View Profile</a>
+              </li>
+            </ng-container>
+          </div>
+          <div *ngIf="followers.length == 0">
+            <p>Loading...</p>
+          </div>
+        </ng-container>
+        <ng-template #loading>
+          <p>Loading...</p>
+        </ng-template>
+      </ol>
+    </div>
+  </div>
+</div>

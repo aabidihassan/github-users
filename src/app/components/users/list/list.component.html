@@ -1,14 +1,15 @@
 <ng-container *ngIf="usersState$ | async as state" [ngSwitch]="state.dataState" ]>
-  <h2 *ngSwitchCase="UserStateEnum.INITIAL">Initial State</h2>
-  <h2 *ngSwitchCase="UserStateEnum.LOADING">Loading users...</h2>
-  <div *ngSwitchCase="UserStateEnum.LOADED">
-    <div class="row">
+  <h2 *ngSwitchCase="StateEnum.INITIAL">Initial State</h2>
+  <h2 *ngSwitchCase="StateEnum.LOADING">Loading users...</h2>
+  <h2 class="text-danger" *ngSwitchCase="StateEnum.ERROR">{{state.errorMessage}}</h2>
+  <div *ngSwitchCase="StateEnum.LOADED">
+    <div class="row p-4">
       <div class="col-md-3" *ngFor="let user of state.users">
-        <div class="card m-1">
+        <div class="card mb-2">
           <img class="card-img-top" src="{{user.avatar_url}}" alt="Avatar" style="width:100%">
           <div class="card-body">
             <h4 class="card-title">{{user.login}}</h4>
-            <button (click)="showProfile(user.login)" class="btn btn-primary">See Profile</button>
+            <a routerLink="/users/{{user.login}}" class="btn btn-primary">See Profile</a>
           </div>
         </div>
       </div>

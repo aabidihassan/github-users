@@ -1,0 +1,17 @@
+.card-body {
+  height: 800px;
+  overflow-y: auto;
+}
+
+.repo-info {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.repo-info i {
+  margin-right: 5px;
+  font-size: 1.1rem;
+}

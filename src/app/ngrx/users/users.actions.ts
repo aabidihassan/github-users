@@ -1,5 +1,5 @@
 import {Action} from "@ngrx/store";
-import {User} from "../../models/user.modele";
+import {User} from "../../models/user.model";
 import {UsersActionsTypes} from "../../enums/UsersActionsTypes";
 
 export class GetAllUsersAction implements Action {

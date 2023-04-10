@@ -18,7 +18,7 @@ export class UsersEffects {
       mergeMap((action: UsersActions) => {
         return this.userService.getAllUsers().pipe(
           map((users) => new GetAllUsersActionSuccess(users)),
-          catchError((err) => of(new GetAllUsersActionError(err)))
+          catchError((err) => of(new GetAllUsersActionError(err.message)))
         )
       })
     )

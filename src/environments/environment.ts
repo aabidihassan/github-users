@@ -1,3 +1,3 @@
 export const environment = {
-  baseUrl: 'https://api.github.com/users'
+  baseUrl: 'https://api.github.com'
 };

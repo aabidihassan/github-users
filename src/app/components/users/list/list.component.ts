@@ -3,7 +3,7 @@ import {Store} from "@ngrx/store";
 import {Observable} from "rxjs";
 import {UsersState} from "../../../ngrx/users/users.reducer";
 import {map} from "rxjs/operators";
-import {UserStateEnum} from "../../../enums/userState.enum";
+import {StateEnum} from "../../../enums/userState.enum";
 
 @Component({
   selector: 'app-list',
@@ -13,7 +13,7 @@ import {UserStateEnum} from "../../../enums/userState.enum";
 export class ListComponent implements OnInit {
 
   usersState$: Observable<UsersState> | null = null
-  readonly UserStateEnum = UserStateEnum
+  readonly StateEnum = StateEnum
 
   constructor(private store: Store<any>) {
   }
@@ -24,7 +24,4 @@ export class ListComponent implements OnInit {
     )
   }
 
-  showProfile(login: string): void {
-
-  }
 }

@@ -12,12 +12,20 @@ import {usersReducer} from "./ngrx/users/users.reducer";
 import {UsersEffects} from "./ngrx/users/users.effects";
 import {HomeComponent} from "./components/home/home.component";
 import {RouterOutlet} from "@angular/router";
+import {NotfoundComponent} from './components/notfound/notfound.component';
+import {ProfileComponent} from './components/users/profile/profile.component';
+import {FollowersComponent} from './components/users/profile/followers/followers.component';
+import {ReposComponent} from './components/users/profile/repos/repos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    HomeComponent
+    HomeComponent,
+    NotfoundComponent,
+    ProfileComponent,
+    FollowersComponent,
+    ReposComponent
   ],
   imports: [
     BrowserModule,
